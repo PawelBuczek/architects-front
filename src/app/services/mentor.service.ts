@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Candidate} from '../model/candidate';
+import {Mentor} from '../model/mentor';
 
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class CandidateService {
+export class MentorService {
   constructor(public httpClient: HttpClient) {
   }
 
@@ -20,13 +21,13 @@ export class CandidateService {
   //   phoneNumber: ''
   // };
 
-  candidates: Candidate[] = [];
+  mentors: Mentor[] = [];
 
-  private url = 'http://localhost:8080/candidate';
+  private url = 'http://localhost:8080/mentor';
 
   loadData(): void {
-    this.httpClient.get<Candidate[]>(this.url)
-      .subscribe(candidates => this.candidates = candidates);
+    this.httpClient.get<Mentor[]>(this.url)
+      .subscribe(mentors => this.mentors = mentors);
   }
 
   delete(id: number): void {
@@ -40,8 +41,8 @@ export class CandidateService {
   //
   // }
 
-  getBabysitter(babysitter: Candidate, babysitterId: number): void {
-    this.httpClient.get<Candidate>(this.url + babysitterId)
-      .subscribe(babySitterFromHttps => babysitter = babySitterFromHttps);
+  getMentor(mentor: Mentor, mentorId: number): void {
+    this.httpClient.get<Candidate>(this.url + mentorId)
+      .subscribe(mentorFromHttp => mentor = mentorFromHttp);
   }
 }

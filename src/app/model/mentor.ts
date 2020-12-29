@@ -1,4 +1,4 @@
-export interface Candidate {
+export interface Mentor {
   id?: number;
   firstName: string;
   lastName: string;

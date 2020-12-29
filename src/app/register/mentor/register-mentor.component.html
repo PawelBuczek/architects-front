@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Mentor</title>
+</head>
+<body>
+
+<div class="container pt-3 border">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <p class="h1">Become our mentor!</p>
+    <div class="w-100"></div>
+    <div class="col-md-3"></div>
+    <p class="h6">It's fast and easy!</p>
+  </div>
+  <hr class="col-md-6">
+
+  <form class="text-center" (ngSubmit)="registerMentor()">
+    <div class="row form-group">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
+        <input type="text" class="form-control text-center bg-light text-dark" name="first-name" required id="first-name" placeholder="First Name"
+               [(ngModel)]="newMentor.firstName">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control text-center bg-light text-dark" name="last-name"  required id="last-name" placeholder="Last Name"
+               [(ngModel)]="newMentor.lastName">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <input type="email" class="form-control text-center bg-light text-dark" name="primaryEmail"  required id="primaryEmail" placeholder="Primary Email"
+               [(ngModel)]="newMentor.primaryEmail">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <input type="email" class="form-control text-center bg-light text-dark" name="secondaryEmail"  required id="secondaryEmail" placeholder="Secondary Email"
+               [(ngModel)]="newMentor.secondaryEmail">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <input type="text" class="form-control text-center bg-light text-dark" name="phone-number"  required id="phone-number" placeholder="Phone nr"
+               [(ngModel)]="newMentor.phoneNr">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+    </div>
+  </form>
+  <br>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <p class="font-italic">We promise to use your data safely.</p>
+    <div class="w-100"></div>
+    <div class="col-md-3"></div>
+    <p class="font-italic">We will not share your data with any third parties.</p>
+  </div>
+</div>
+</body>
+</html>

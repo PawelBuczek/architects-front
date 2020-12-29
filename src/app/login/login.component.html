@@ -11,25 +11,28 @@
   <h1 class="h5 mb-3 fw-normal">Please log in to start!</h1>
   <form method="post" (ngSubmit)="onFormSubmit()">
     <div class="form-group">
-    <hr class="my-4">
-    <div>
-      <label class="logonLabel" for="uname"><b>Email:</b></label>
-      <input type="email" class="form-control col-3" placeholder="Enter Email" name="uname" required id="uname">
-    </div>
-    <div>
-      <label class="logonLabel" for="psw"><b>Password:</b></label>
-      <input type="password" class="form-control col-3" placeholder="Enter Password" name="psw" required id="psw">
-    </div>
-    <div>
-      <button type="submit" class="btn btn-primary">Login</button>
-    </div>
-    <label>
-     <input class="form-check-input" type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-    <hr class="my-4">
+      <hr class="my-4">
+      <div>
+        <label class="logonLabel" for="uname"><b>Email:</b></label>
+        <input type="email" class="form-control col-3" placeholder="Enter Email" name="uname" required id="uname">
+      </div>
+      <div>
+        <label class="logonLabel" for="psw"><b>Password:</b></label>
+        <input type="password" class="form-control col-3" placeholder="Enter Password" name="psw" required id="psw">
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+      <label>
+        <input class="form-check-input" type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      <hr class="my-4">
       <div class="forgot-password"><a [routerLink]="['forgot-password']">Forgot password?</a></div>
-
-    <div>New user? <a [routerLink]="['register']">Register now!</a></div>
+      <hr class="my-4">
+      <div>New user?</div>
+      <div><a class="btn btn-primary" [routerLink]="['register-candidate']" role="button">Register as a future candidate!</a></div>
+      <hr class="my-3">
+      <div><a class="btn btn-primary" [routerLink]="['register-mentor']" role="button">Become one of our mentors!</a></div>
     </div>
   </form>
 </div>

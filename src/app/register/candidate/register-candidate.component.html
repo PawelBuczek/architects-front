@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Register</title>
+  <title>Register Candidate</title>
 </head>
 <body>
 
 <div class="container pt-3 border">
   <div class="row">
     <div class="col-md-3"></div>
-    <p class="h1">Register</p>
+    <p class="h1">Become a candidate!</p>
     <div class="w-100"></div>
     <div class="col-md-3"></div>
     <p class="h6">It's fast and easy!</p>
   </div>
   <hr class="col-md-6">
 
-  <form class="text-center" (ngSubmit)="createBabysitter()">
+  <form class="text-center" (ngSubmit)="registerCandidate()">
     <div class="row form-group">
       <div class="col-md-3"></div>
       <div class="col-md-3">
@@ -46,7 +46,7 @@
       <div class="col-md-3"></div>
       <div class="col-md-6">
         <input type="text" class="form-control text-center bg-light text-dark" name="phone-number"  required id="phone-number" placeholder="Phone nr"
-               [(ngModel)]="newCandidate.phoneNumber">
+               [(ngModel)]="newCandidate.phoneNr">
       </div>
     </div>
     <div class="row">
