@@ -10,6 +10,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {MainViewComponent} from './main-view/main-view.component';
 import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 import {RegisterMentorComponent} from './register/mentor/register-mentor.component';
+import {AdminConsoleComponent} from './admin-console/admin-console.component';
 
 const root: Routes = [{
   path: '',
@@ -27,6 +28,9 @@ const root: Routes = [{
   }, {
     path: 'forgot-password',
     component: ForgotPasswordComponent
+  }, {
+    path: 'admin-console',
+    component: AdminConsoleComponent
   }
 ];
 
@@ -37,7 +41,8 @@ const root: Routes = [{
     RegisterCandidateComponent,
     RegisterMentorComponent,
     MainViewComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    AdminConsoleComponent
   ],
   imports: [
     BrowserModule,
