@@ -8,5 +8,7 @@
         crossorigin="anonymous"></script>
 
 <div id="container">
-  <router-outlet></router-outlet>
+  <button *ngIf="checkIfLoggedIn()" type="button" class="btn btn-primary" (click)="logout()">Logout</button>
 </div>
+<router-outlet></router-outlet>
+

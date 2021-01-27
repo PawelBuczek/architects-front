@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Candidate} from '../../model/candidate';
+import {CandidateAndUserDto} from '../../model/candidateAndUserDto';
 
 @Component({
   selector: 'app-register-candidate',
@@ -13,8 +14,15 @@ export class RegisterCandidateComponent {
   newCandidate: Candidate = {
     firstName: '',
     lastName: '',
+    phoneNr: ''
+  };
+  newCandidateAndUser: CandidateAndUserDto = {
+    username: '',
+    password: '',
     primaryEmail: '',
     secondaryEmail: '',
+    firstName: '',
+    lastName: '',
     phoneNr: ''
   };
 
@@ -24,6 +32,11 @@ export class RegisterCandidateComponent {
     this.router.navigateByUrl('/');
   }
 
+  registerCandidateAndUser(): void {
+    this.httpClient.post<Candidate>(this.url + 'user', this.newCandidateAndUser)
+      .subscribe();
+    this.router.navigateByUrl('/');
+  }
 
   constructor(public httpClient: HttpClient, private activeRoute: ActivatedRoute, private router: Router) {
   }

@@ -5,7 +5,11 @@
   <title>Login</title>
 </head>
 <body>
-<div class="jumbotron">
+<div class="col-md-4 alert alert-danger" role="alert" *ngIf="showAlert">
+  <button type="button" class="close" (click)="showAlert=false">&times;</button>
+  <strong>Incorrect login details!</strong>
+</div>
+<div class="jumbotron" *ngIf="!checkIfLoggedIn()">
   <h1 class="display-4 text-center">Candidate/Mentor</h1>
   <hr class="my-4">
   <h1 class="h5 mb-3 fw-normal">Please log in to start!</h1>
@@ -13,12 +17,14 @@
     <div class="form-group">
       <hr class="my-4">
       <div>
-        <label class="logonLabel" for="uname"><b>Email:</b></label>
-        <input type="email" class="form-control col-3" placeholder="Enter Email" name="uname" required id="uname">
+        <label class="logonLabel" for="uname"><b>Username:</b></label>
+        <input type="text" class="form-control col-3" placeholder="Enter Username" name="uname" required id="uname"
+        [(ngModel)]="username">
       </div>
       <div>
         <label class="logonLabel" for="psw"><b>Password:</b></label>
-        <input type="password" class="form-control col-3" placeholder="Enter Password" name="psw" required id="psw">
+        <input type="password" class="form-control col-3" placeholder="Enter Password" name="psw" required id="psw"
+        [(ngModel)]="password">
       </div>
       <div>
         <button type="submit" class="btn btn-primary">Login</button>
@@ -30,9 +36,11 @@
       <div class="forgot-password"><a [routerLink]="['forgot-password']">Forgot password?</a></div>
       <hr class="my-4">
       <div>New user?</div>
-      <div><a class="btn btn-primary" [routerLink]="['register-candidate']" role="button">Register as a future candidate!</a></div>
+      <div><a class="btn btn-primary" [routerLink]="['register-candidate']" role="button">Register as a future
+        candidate!</a></div>
       <hr class="my-3">
-      <div><a class="btn btn-primary" [routerLink]="['register-mentor']" role="button">Become one of our mentors!</a></div>
+      <div><a class="btn btn-primary" [routerLink]="['register-mentor']" role="button">Become one of our mentors!</a>
+      </div>
     </div>
   </form>
 </div>
